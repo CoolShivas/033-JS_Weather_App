@@ -279,6 +279,10 @@
 
         accWeath_Temp.innerHTML = `${main.temp}&#176`; // Getting temp on display as => 306.4°;
 
+        accWeath_Min.innerHTML = `Min: ${main.temp_min}&#176`; // Getting temp minimum on display as => Min: 306.4°;
+
+        accWeath_Max.innerHTML = `Max: ${main.temp_max}&#176`; // Getting temp maximun on display as => Max: 306.4°;
+
       } catch (error) {
         console.log(error);
       }
