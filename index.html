@@ -225,6 +225,8 @@
 
     const accWeath_Pressure = document.querySelector(".weather_pressure");
 
+    const accWeath_FormSubSearch = document.querySelector(".weather_search");
+
     // //======// // Ending of references of id's and classes of html tag.// //======// // 
 
     ////////**********************************************************************************************////////
@@ -260,6 +262,19 @@
     };
 
     let dynamicNameCity = "gwalior"; // Assigning the default dynamic city name for api;
+
+    accWeath_FormSubSearch.addEventListener("submit", (event) => {
+      event.preventDefault(); // Preventing the auto form submission;
+
+      let accInputFieldCityName = document.querySelector(".city_name"); // Getting reference of input field class;
+      dynamicNameCity = accInputFieldCityName.value; // Assigning input field search value to dynamic city name;
+      console.log(dynamicNameCity); // Getting the input field value on browser console;
+      
+      getWeatherData(); // Calling the function after entering the input field on reloading the page;
+
+      accInputFieldCityName.value = ""; // Clearing the input field;
+
+    });
 
     const getWeatherData = async() => {
       const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${dynamicNameCity}&appid=3aa94f962094ae7c82dcebf7d91b85e0`;
