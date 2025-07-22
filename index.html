@@ -225,6 +225,26 @@
 
     // //======// // Starting of defining all the function here. // //======// // 
 
+    const getCorrectFormatDateTime = (dt) => {
+      const currDateTime = new Date(dt * 1000); // Converting seconds to miliseconds;
+      // console.log(currDateTime); // Getting on browser console as => Tue Jul 22 2025 13:51:22 GMT+0530 (India Standard Time);
+      const options = {
+        weekDay : "long",
+        month : "long",
+        year : "numeric",
+        day : "numeric",
+        hour : "numeric",
+        minute : "numeric",
+      };
+
+      const formatter = new Intl.DateTimeFormat("en-US", options);
+      // return formatter; // Getting on display as => [object Intl.DateTimeFormat];
+
+      const correctDateTIme = formatter.format(currDateTime);
+      return correctDateTIme;
+
+    };
+
     const getCountryCodeFullName = (code) => {
       // return new Intl.DisplayNames(["en"], {type: "region"}); // Getting on display as [object Intl.DisplayNames];
       // return new Intl.DisplayNames([code], {type: "region"}); // Now, also getting on display as [object Intl.DisplayNames];
@@ -249,6 +269,9 @@
 
         accWeath_City.innerHTML = `${name}, ${getCountryCodeFullName(sys.country)}`; // Getting city name with country code on display;
 
+        // accWeath_DateTime.innerHTML = dt; // Getting on display 1753172256 i.e., the seconds;
+
+        accWeath_DateTime.innerHTML = getCorrectFormatDateTime(dt); // Passing dt as argument to function;
 
       } catch (error) {
         console.log(error);
