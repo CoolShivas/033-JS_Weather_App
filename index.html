@@ -273,6 +273,12 @@
 
         accWeath_DateTime.innerHTML = getCorrectFormatDateTime(dt); // Passing dt as argument to function;
 
+        // accWeath_Temp.innerText = main.temp; // Getting temp on display as numeric value as 306.4 only;
+
+        // accWeath_Temp.innerText = `${main.temp}&#176`; // Getting temp on display as => 306.4&#176 not the degree sign;
+
+        accWeath_Temp.innerHTML = `${main.temp}&#176`; // Getting temp on display as => 306.4°;
+
       } catch (error) {
         console.log(error);
       }
