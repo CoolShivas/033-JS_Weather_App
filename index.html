@@ -295,13 +295,15 @@
 
         accWeath_Max.innerHTML = `Max: ${main.temp_max.toFixed()}&#176`; // Getting temp maximun by removing decimal value on display as => Max: 306°;
 
-        accWeath_FeelsLike.innerHTML = `${main.feels_like.toFixed()}&#176`; // Getting feels_like on display as => Feels Like 309°;
+        accWeath_FeelsLike.innerHTML = `${main.feels_like.toFixed(2)}&#176`; // Getting feels_like on display as => Feels Like 309°;
 
         accWeath_Humidity.innerHTML = `${main.humidity}%`; // Getting humidity on display;
 
         accWeath_Wind.innerHTML = `${wind.speed} m/s`; // Getting wind speed in m/s on display;
 
         accWeath_Pressure.innerHTML = `${main.pressure} hPa`; // Getting pressure on display;
+
+        accWeath_ForeCast.innerHTML = weather[0].main; // Getting weather forecast as cloudy or sunny type text on display;
 
       } catch (error) {
         console.log(error);
