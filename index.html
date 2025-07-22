@@ -222,7 +222,16 @@
     ////////**********************************************************************************************////////
     ////////**********************************************************************************************////////
 
-    // //======// // Starting of defining the getWeather() with api.// //======// // 
+
+    // //======// // Starting of defining all the function here. // //======// // 
+
+    const getCountryCodeFullName = (code) => {
+      // return new Intl.DisplayNames(["en"], {type: "region"}); // Getting on display as [object Intl.DisplayNames];
+      // return new Intl.DisplayNames([code], {type: "region"}); // Now, also getting on display as [object Intl.DisplayNames];
+      return new Intl.DisplayNames([code], {type: "region"}).of(code); // Getting full name of country on display;
+    };
+
+
     const getWeatherData = async() => {
       const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=guna&appid=3aa94f962094ae7c82dcebf7d91b85e0`;
 
@@ -236,7 +245,9 @@
 
         // accWeath_City.innerHTML = name; // Getting city name on display;
 
-        accWeath_City.innerHTML = `${name}, ${sys.country}`; // Getting city name with country code on display;
+        // accWeath_City.innerHTML = `${name}, ${sys.country}`; // Getting city name with country code on display;
+
+        accWeath_City.innerHTML = `${name}, ${getCountryCodeFullName(sys.country)}`; // Getting city name with country code on display;
 
 
       } catch (error) {
@@ -244,7 +255,7 @@
       }
     };
 
-        // //======// // Ending of defining the getWeather() with api.// //======// // 
+        // //======// // Ending of defining all the function here. // //======// // 
 
     ////////**********************************************************************************************////////
     ////////**********************************************************************************************////////
