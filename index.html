@@ -218,6 +218,29 @@
     const accWeath_Max = document.querySelector('.weather_max');
 
     // //======// // Ending of references of id's and classes of html tag.// //======// // 
+
+    ////////**********************************************************************************************////////
+    ////////**********************************************************************************************////////
+
+    // //======// // Starting of defining the getWeather() with api.// //======// // 
+    const getWeatherData = () => {
+      const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=guna&appid=3aa94f962094ae7c82dcebf7d91b85e0`;
+    };
+
+        // //======// // Ending of defining the getWeather() with api.// //======// // 
+
+    ////////**********************************************************************************************////////
+    ////////**********************************************************************************************////////
+
+    // //======// // Starting of firing the event listener on load when function invokes.// //======// // 
+
+    // // // Added the load on body and invoke the function for preload on page open or user visit to this page;
+    document.body.addEventListener("load", getWeatherData());
+
+    // //======// // Ending of firing the event listener on load when function invokes.// //======// // 
+
+    ////////**********************************************************************************************////////
+    ////////**********************************************************************************************////////
   </script>
 </body>
 
