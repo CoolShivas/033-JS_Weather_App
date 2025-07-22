@@ -305,6 +305,10 @@
 
         accWeath_ForeCast.innerHTML = weather[0].main; // Getting weather forecast as cloudy or sunny type text on display;
 
+        // accWeath_Icon.innerHTML = weather[0].icon; // Getting icon image on display as => 04n (i.e., unicode of icon image);
+
+        accWeath_Icon.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather[0].icon}@4x.png" alt="not found">`; // Finally, we are getting the icon image on display;
+
       } catch (error) {
         console.log(error);
       }
