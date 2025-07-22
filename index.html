@@ -259,9 +259,10 @@
       return new Intl.DisplayNames([code], {type: "region"}).of(code); // Getting full name of country on display;
     };
 
+    let dynamicNameCity = "gwalior"; // Assigning the default dynamic city name for api;
 
     const getWeatherData = async() => {
-      const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=guna&appid=3aa94f962094ae7c82dcebf7d91b85e0`;
+      const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${dynamicNameCity}&appid=3aa94f962094ae7c82dcebf7d91b85e0`;
 
       try {
         const response = await fetch(apiURL);
