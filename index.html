@@ -234,6 +234,11 @@
         const {main,name, weather, wind, sys, dt} = data; // Destructuring the data of response;
         // console.log(name); // Getting name on browser console;
 
+        // accWeath_City.innerHTML = name; // Getting city name on display;
+
+        accWeath_City.innerHTML = `${name}, ${sys.country}`; // Getting city name with country code on display;
+
+
       } catch (error) {
         console.log(error);
       }
